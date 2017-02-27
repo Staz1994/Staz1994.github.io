@@ -43,3 +43,5 @@ Thread-0  null
 Thread-0  Thread-0Setted
 main null
 ```
+
+这里main线程中，***THREAD_LOCAL.get()***获取到的值并没有改变。
