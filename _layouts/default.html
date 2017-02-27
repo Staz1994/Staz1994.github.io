@@ -28,7 +28,14 @@
     <link href="http://cdn.bootcss.com/highlight.js/9.4.0/styles/monokai_sublime.min.css" rel="stylesheet">  
     <!-- <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script> -->
     <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.configure({
+        tabReplace: '    ', // 4 spaces
+        classPrefix: ''     // don't append class prefix
+        languages:'java'
+      })
+      hljs.initHighlightingOnLoad();
+    </script>
   </head>
   
   <body>
