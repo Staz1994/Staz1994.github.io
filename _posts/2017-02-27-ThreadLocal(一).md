@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ThreadLocal(一)
-categories: Java
-tags: ThreadLocal
+categories: ThreadLocal
+tags: Java
 ---
 
 ThreadLocal 用于同一线程内的对象共享，在不同线程内读到的值是不同的。
