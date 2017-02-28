@@ -8,6 +8,7 @@ tags: Java
 ##### 解析部分。
 1. ThreadLocal类内定义了一个静态内部类 *ThreadLocalMap*(以下简称map) 这个map 实际上是一个 *Entry* 的数组。*Entry* 是一个 WeakReference 的键值对。key则是ThreadLocal这个类的实例化对象。
 2. map的引用是在Thread对象中的。
+
 ```
 /* ThreadLocal values pertaining to this thread. This map is maintained
  * by the ThreadLocal class. */
