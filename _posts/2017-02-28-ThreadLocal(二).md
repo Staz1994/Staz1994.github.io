@@ -5,7 +5,7 @@ categories: ThreadLocal
 tags: Java
 ---
 
-解析部分。
+ThreadLocal 解析部分。
 
 
 
@@ -24,6 +24,7 @@ tags: Java
      */
     ThreadLocal.ThreadLocalMap inheritableThreadLocals = null;
 ```
+![image](http://7xlune.com1.z0.glb.clouddn.com/images/解密ThreadLocal/ThreadLocal.png)
 
 ###### 3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
 
