@@ -28,6 +28,17 @@
     <link href="http://cdn.bootcss.com/highlight.js/9.4.0/styles/monokai_sublime.min.css" rel="stylesheet">  
     <script src="http://cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
     <script>
+      $('pre code').each(function(){
+        var lines = $(this).text().split('\n').length - 1;
+        var $numbering = $('<ul/>').addClass('pre-numbering');
+        $(this)
+            .addClass('has-numbering')
+            .parent()
+            .append($numbering);
+        for(i=1;i<=lines;i++){
+            $numbering.append($('<li/>').text(i));
+        }
+      });
       hljs.initHighlightingOnLoad();
     </script>
   </head>
