@@ -20,6 +20,7 @@ ThreadLocal.ThreadLocalMap threadLocals = null;
  */
 ThreadLocal.ThreadLocalMap inheritableThreadLocals = null;
 ```
+
 3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
 
 ```
@@ -41,6 +42,7 @@ public T get() {
     return t.threadLocals;
 }
 ```
+
 4. map的大小
 
 ```
@@ -84,7 +86,9 @@ private void resize() {
 }
 ```
 也是将大小翻倍了。也就是扩容后的容量是2的N+1次。
+
 5. 如何定位 数据存储在map中数组的位置
+
 5.1. ThreadLocal中有一个属性
 
 ```
@@ -104,6 +108,7 @@ private static int nextHashCode() {
 int i = key.threadLocalHashCode & (len-1);
 ```
 运算得到的i就是value在数组里面存放的位置entry[i]。
+
 5.2. 有个疑问：为什么要以 0x61c88647 的倍数 & (len-1) 作为key，难道这个不会有冲突吗？
 
 ```
