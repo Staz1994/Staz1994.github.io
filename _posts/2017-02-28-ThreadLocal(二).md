@@ -9,7 +9,7 @@ ThreadLocal 解析部分。
 
 
 
-###### 1. ThreadLocal类内定义了一个静态内部类 *ThreadLocalMap*(以下简称map) 这个map 实际上是一个 *Entry* 的数组。*Entry* 是一个 WeakReference 的键值对。key则是ThreadLocal这个类的实例化对象。
+##### 1. ThreadLocal类内定义了一个静态内部类 *ThreadLocalMap*(以下简称map) 这个map 实际上是一个 *Entry* 的数组。*Entry* 是一个 WeakReference 的键值对。key则是ThreadLocal这个类的实例化对象。
 
 ###### 2. map的引用是在Thread对象中的。
 
@@ -26,7 +26,7 @@ ThreadLocal 解析部分。
 ```
 ![image](http://7xlune.com1.z0.glb.clouddn.com/images/解密ThreadLocal/ThreadLocal.png)
 
-###### 3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
+##### 3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
 
 ```
     public T get() {
@@ -48,7 +48,7 @@ ThreadLocal 解析部分。
     }
 ```
 
-###### 4. map的大小
+##### 4. map的大小
 
 ```
 /**
@@ -94,7 +94,7 @@ ThreadLocal 解析部分。
 
 也是将大小翻倍了。也就是扩容后的容量是2的N+1次。
 
-###### 5. 如何定位 数据存储在map中数组的位置
+##### 5. 如何定位 数据存储在map中数组的位置
 
 - ThreadLocal中有一个属性*threadLocalHashCode*
 
