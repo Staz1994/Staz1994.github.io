@@ -95,7 +95,7 @@ tags: Java
 
 ###### 5. 如何定位 数据存储在map中数组的位置
 
-- ThreadLocal中有一个属性
+- ThreadLocal中有一个属性*threadLocalHashCode*
 
 ```
     private final int threadLocalHashCode = nextHashCode();
@@ -109,7 +109,7 @@ tags: Java
     }
 ```
 
-这个就是它作为key的hashCode，每新建一个ThreadLocal,*threadLocalHashCode*会比上次的大 *0x61c88647* 。在set的时候，*threadLocalHashCode* 会与 map 的len 进行运算
+这个就是它作为key的hashCode，每实例化一个ThreadLocal,*threadLocalHashCode*会比上次的大 *0x61c88647* 。在set的时候，*threadLocalHashCode* 会与 map 的len 进行运算
 
 ```
      int i = key.threadLocalHashCode & (len-1);

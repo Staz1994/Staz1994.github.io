@@ -54,7 +54,7 @@ pre {
     font-size: 95%;
     line-height: 140%;
     white-space: pre;
-    white-space: pre-wrap;
+    /*white-space: pre-wrap;*/
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
 }       
