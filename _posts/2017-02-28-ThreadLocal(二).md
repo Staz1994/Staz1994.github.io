@@ -5,10 +5,13 @@ categories: ThreadLocal
 tags: Java
 ---
 
-##### 解析部分。
-1. ThreadLocal类内定义了一个静态内部类 *ThreadLocalMap*(以下简称map) 这个map 实际上是一个 *Entry* 的数组。*Entry* 是一个 WeakReference 的键值对。key则是ThreadLocal这个类的实例化对象。
+#### 解析部分。
 
-2. map的引用是在Thread对象中的。
+
+
+###### 1. ThreadLocal类内定义了一个静态内部类 *ThreadLocalMap*(以下简称map) 这个map 实际上是一个 *Entry* 的数组。*Entry* 是一个 WeakReference 的键值对。key则是ThreadLocal这个类的实例化对象。
+
+###### 2. map的引用是在Thread对象中的。
 
 ```
     /* ThreadLocal values pertaining to this thread. This map is maintained
@@ -22,7 +25,7 @@ tags: Java
     ThreadLocal.ThreadLocalMap inheritableThreadLocals = null;
 ```
 
-3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
+###### 3. 当调用 ThreadLocal.get()方法时，会获取当前线程，从当前线程中获取map，再通过ThreadLocal作为key来获取存储的值。
 
 ```
     public T get() {
@@ -44,7 +47,7 @@ tags: Java
     }
 ```
 
-4. map的大小
+###### 4. map的大小
 
 ```
 /**
@@ -90,9 +93,9 @@ tags: Java
 
 也是将大小翻倍了。也就是扩容后的容量是2的N+1次。
 
-5. 如何定位 数据存储在map中数组的位置
+###### 5. 如何定位 数据存储在map中数组的位置
 
-5.1. ThreadLocal中有一个属性
+- ThreadLocal中有一个属性
 
 ```
     private final int threadLocalHashCode = nextHashCode();
@@ -114,7 +117,7 @@ tags: Java
 
 运算得到的i就是value在数组里面存放的位置entry[i]。
 
-5.2. 有个疑问：为什么要以 0x61c88647 的倍数 & (len-1) 作为key，难道这个不会有冲突吗？
+- 有个疑问：为什么要以 0x61c88647 的倍数 & (len-1) 作为key，难道这个不会有冲突吗？
 
 ```
 /**
