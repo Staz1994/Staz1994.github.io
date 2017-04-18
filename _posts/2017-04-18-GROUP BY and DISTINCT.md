@@ -5,6 +5,9 @@ categories: sql
 tags: sql
 ---
 
+使用GROUP BY 和 DISTINCT 计算总条数
+
+-------------------
 
 mysql version 5.7.15
 
