@@ -5,7 +5,7 @@ categories: ThreadLocal
 tags: Java
 ---
 
-ThreadLocal 解析部分。                                                         
+ThreadLocal 用于同一线程内的对象共享，在不同线程内读到的值是不同的。ThreadLocal 解析部分。                                                         
 
 
 -------------------
