@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>叠猫猫</title>
+    <script src="../js/jquery-1.11.0.js"></script>
+</head>
+<body>
+    <form>
+        总等级:<input type="text" id="totalLevel" readonly>
+        总金额:<input type="text" id="totalAmount">
+        <table>
+            <thead>
+                <td>等级</td>
+                <td>金额</td>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p ></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="calcInput">
+                </td>
+                <td>
+                    <p></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+</body>
+<script>
+    $('.calcInput').change(function () {
+
+        // 总等级
+        let totalLevel = parseInt('0');
+        $('.calcInput').each(function () {
+            let level = $(this).val();
+            if (level != null && level !== '') {
+                totalLevel += parseInt(level);
+            }
+        });
+        $('#totalLevel').val(totalLevel + '');
+        // 总金额
+        let totalAmount = $('#totalAmount').val();
+        if (totalAmount == null) {
+            totalAmount = 0;
+        }
+        if (totalAmount === 0) {
+            return;
+        }
+        $('.calcInput').each(function () {
+            let level = $(this).val();
+            if (level != null && level !== '') {
+                let amount = parseInt(level) * totalAmount / totalLevel
+                $(this).parent().parent().find("p").html(amount);
+            }
+        });
+
+    });
+</script>
+</html>
