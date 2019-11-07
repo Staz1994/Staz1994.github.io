@@ -6,9 +6,13 @@
     <script src="../js/jquery-1.11.0.js"></script>
 </head>
 <body>
-    <form>
-        总等级:<input type="text" id="totalLevel" readonly>
-        总金额:<input type="text" id="totalAmount">
+    <form style="position: absolute;width: 100%;height: 100%;">
+        <div>
+            总等级:<input type="text" id="totalLevel" readonly>
+        </div>
+        <div>
+            总金额:<input type="text" id="totalAmount">
+        </div>
         <table>
             <thead>
                 <td>等级</td>
@@ -179,7 +183,7 @@
         $('.calcInput').each(function () {
             let level = $(this).val();
             if (level != null && level !== '') {
-                let amount = parseInt(level) * totalAmount / totalLevel
+                let amount = parseInt(level) * totalAmount / totalLevel;
                 $(this).parent().parent().find("p").html(amount);
             }
         });
