@@ -24,7 +24,7 @@ JB :
   IMAGE_PATH : /images
 
 # presonal config
-domain: http://wynstaz.com
+domain:
 title: WynStaz's blog
 description: WynStaz's blog
 author: WynStaz
